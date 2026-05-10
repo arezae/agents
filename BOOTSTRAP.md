@@ -84,7 +84,30 @@ Open `CLAUDE.md` and:
 
 ---
 
-## Step 5 — Add product-specific agents (when needed)
+## Step 5 — Set up agent journals (recommended)
+
+Spawned agents have no shared memory between invocations. Plan files and specs
+cover per-feature work, but per-agent learnings, recurring findings, and
+in-progress state need somewhere to live across sessions.
+
+```bash
+cp -r .claude/agents/templates/agent-journals .claude/agent-journals
+git add .claude/agent-journals
+git commit -m "Add agent-journals directory for cross-session continuity"
+```
+
+Each library agent has a `## Working Memory` section that points to its journal
+at `.claude/agent-journals/<agent-name>.md`. Agents read their journal on entry
+and append a dated entry before returning. The directory is host-state — it
+lives in your project, not in the submodule.
+
+If you skip this step, agents check for the directory and proceed without a
+journal if it's missing. You can adopt journals later by running the copy
+command above.
+
+---
+
+## Step 6 — Add product-specific agents (when needed)
 
 Don't pre-emptively create agents you might need. Wait until a real task surfaces a
 gap, then write the agent.
@@ -104,7 +127,7 @@ the agents library.
 
 ---
 
-## Step 6 — Add product-specific skills (when needed)
+## Step 7 — Add product-specific skills (when needed)
 
 Skills are deterministic, repeatable workflows. Add one when you find yourself doing
 the same multi-step thing 3+ times.
@@ -118,7 +141,7 @@ Use the format in `.claude/agents/skills/run-migrations/skill.md` as a starting 
 
 ---
 
-## Step 7 — Verify the setup
+## Step 8 — Verify the setup
 
 Open the project in Claude Code. Test:
 

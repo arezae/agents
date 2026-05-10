@@ -46,6 +46,18 @@ The agents in `.claude/agents/core/` come from the shared agents library
 
 Product-specific agents live alongside core under `.claude/agents/product-specific/`. Add them as you discover the project needs domain expertise the core library doesn't cover.
 
+### Agent journals (cross-session continuity)
+
+Each library agent has a `## Working Memory` section pointing to its journal at
+`.claude/agent-journals/<agent-name>.md`. Agents read their journal on entry and
+append a dated entry before returning — that's how spawned agents carry context
+across sessions. If `.claude/agent-journals/` is missing, agents proceed without
+one. To adopt journals, copy the template:
+
+```bash
+cp -r .claude/agents/templates/agent-journals .claude/agent-journals
+```
+
 ## Skills
 
 Reusable skills from the library at `.claude/agents/skills/`:

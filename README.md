@@ -23,8 +23,14 @@ skills/                     Reusable workflows agents invoke
 
 templates/                  Files to copy into a new product repo
 ├── PROJECT_CONTEXT.md      The keystone — every project-specific fact agents read
-└── CLAUDE.md               Routing layer: which agents and skills exist for the project
+├── CLAUDE.md               Routing layer: which agents and skills exist for the project
+└── agent-journals/         Per-agent continuity logs (host-state, not in this submodule)
 ```
+
+Each library agent has a `## Working Memory` section pointing to its journal at
+`.claude/agent-journals/<agent-name>.md`. Agents read their journal on entry and
+append a dated entry before returning — that is how spawned agents carry context
+across sessions in a consuming project.
 
 ## Two-layer design
 

@@ -11,6 +11,33 @@ personas (per `PROJECT_CONTEXT.md` → Audiences).
 > session. If a project ships a `DESIGN.md` design system source-of-truth, follow it
 > over the defaults below.
 
+## Working Memory
+
+You have a persistent journal at `.claude/agent-journals/ux-designer.md` in the
+consuming project (host-state, not part of this agents library). It is your only
+continuity across sessions — past invocations of this role cannot share their
+context with you any other way.
+
+**On every invocation:**
+1. **Read your journal first.** Skim the last ~5 entries for design decisions,
+   persona insights, and interaction patterns established in earlier work.
+2. **Do the work.**
+3. **Append a dated entry before returning**, using this format:
+
+   ```markdown
+   ## YYYY-MM-DD — <one-line summary of the task>
+
+   **Did:** Design decisions made (flows, components, states).
+   **Learned:** Non-obvious findings, surprises, gotchas. Skip if none.
+   **Open:** Anything left undone or blocked, with enough context for next time.
+   ```
+
+If `.claude/agent-journals/` doesn't exist, the project hasn't adopted journals —
+proceed without one. If the directory exists but your file doesn't, create the file
+before appending. Keep entries terse — one screen max. Append-only; never delete
+past entries; supersede with a new entry. See `.claude/agent-journals/README.md`
+for full rules.
+
 ## Design Philosophy
 
 - **Mobile-first**: Every screen must work flawlessly on a phone. Taps over clicks. Minimize typing.
