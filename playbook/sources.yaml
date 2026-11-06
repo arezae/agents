@@ -1,0 +1,104 @@
+# Source registry for the agent playbook.
+# tier: 1 = official / first-party, 2 = practitioner with hands-on evidence, 3 = secondary or research aggregator
+# cadence: weekly | monthly
+# Entries marked "verify" have a URL that was not fetched when this file was seeded.
+# Change rule: additions and removals only through a pull request (see skills/agent-playbook/skill.md).
+
+sources:
+  - name: Anthropic Engineering blog
+    url: https://www.anthropic.com/engineering
+    tier: 1
+    cadence: weekly
+    why: Canonical posts on context engineering, tools, harnesses, skills, evals
+    last_checked: 2026-11-06
+
+  - name: Claude Code docs, "Manage costs"
+    url: https://code.claude.com/docs/en/costs
+    tier: 1
+    cadence: weekly
+    why: Official token and cost levers; changes with each Claude Code release
+    last_checked: 2026-11-06
+
+  - name: Claude Code releases and changelog
+    url: https://github.com/anthropics/claude-code
+    tier: 1
+    cadence: weekly
+    why: Behavior changes that make older token tips stale (verify the CHANGELOG path)
+    last_checked: never
+
+  - name: claude.com blog
+    url: https://claude.com/blog
+    tier: 1
+    cadence: weekly
+    why: Decision rules such as single vs multi-agent
+    last_checked: 2026-11-06
+
+  - name: Claude platform docs and release notes
+    url: https://platform.claude.com/docs/en/release-notes/overview
+    tier: 1
+    cadence: weekly
+    why: API features such as caching, context editing, tool search (verify URL)
+    last_checked: never
+
+  - name: Claude prompting best practices
+    url: https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview
+    tier: 1
+    cadence: monthly
+    why: Official prompt guidance
+    last_checked: never
+
+  - name: anthropics/skills
+    url: https://github.com/anthropics/skills
+    tier: 1
+    cadence: weekly
+    why: Official skills and the skill template and spec
+    last_checked: never
+
+  - name: Andrej Karpathy (X and gists)
+    url: https://x.com/karpathy
+    tier: 2
+    cadence: weekly
+    why: Context engineering, agent loops, LLM Wiki pattern; now at Anthropic, so output may change
+    last_checked: never
+
+  - name: Karpathy LLM Wiki gist
+    url: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+    tier: 2
+    cadence: monthly
+    why: Pattern for an LLM-maintained knowledge base
+    last_checked: never
+
+  - name: Cognition (Walden Yan)
+    url: https://cognition.com
+    tier: 2
+    cadence: monthly
+    why: Counterweight on multi-agent design; "Don't Build Multi-Agents" and the April 2026 follow-up (verify blog URL)
+    last_checked: never
+
+  - name: Simon Willison
+    url: https://simonwillison.net
+    tier: 2
+    cadence: weekly
+    why: Hands-on tests of new models and agent tools, near-daily
+    last_checked: never
+
+  - name: Hamel Husain
+    url: https://hamel.dev
+    tier: 2
+    cadence: monthly
+    why: Evals and error analysis for applied AI
+    last_checked: never
+
+  - name: Latent Space
+    url: https://www.latent.space
+    tier: 2
+    cadence: weekly
+    why: AI engineering interviews and essays
+    last_checked: never
+
+  - name: Chroma, Context Rot research
+    url: https://research.trychroma.com/context-rot
+    tier: 3
+    cadence: monthly
+    why: Evidence that quality drops as input length grows (verify URL)
+    last_checked: never
