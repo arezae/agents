@@ -65,6 +65,7 @@ Reusable skills from the library at `.claude/agents/skills/`:
 - `run-migrations` — required before any schema migration
 - `validate-api-schemas` — required before any API surface change PR
 - `format-admin-report` — admin command / digest formatting
+- `agent-playbook` — consult when designing or changing an agent, prompt, skill or orchestration, or when token cost matters
 
 Product-specific skills live at `.claude/skills/`.
 
